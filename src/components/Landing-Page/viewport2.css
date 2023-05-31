@@ -1,0 +1,44 @@
+.v2-content {
+  display: flex;
+  padding: 2% 10%;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: #f8f7f7;
+}
+
+.v2-content .content1 {
+  display: grid;
+}
+
+.v2-content .content1 h1 {
+}
+
+.v2-content .content1 .content1-numbers {
+  display: grid;
+  grid-template-rows: 120px 100px;
+  grid-template-columns: 140px 140px;
+}
+
+.v2-content .content2 {
+  display: grid;
+  grid-template-rows: 150px 150px;
+  grid-template-columns: 350px 350px;
+  grid-gap: 2rem;
+}
+
+.v2-content h1 {
+  font-family: "Gilroy", 'sans serif', monospace;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.v2-content .content1 .header {
+	font-family: 'serif', 'Helvetica';
+	line-height: 38px;
+	font-weight: 700;
+}
+
+.analytics h1, .features h1 {
+  margin-bottom: 1.5rem;
+}

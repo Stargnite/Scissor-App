@@ -1,0 +1,52 @@
+.signup-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  height: 70vh;
+  width: 70vh;
+  border: 1px solid black;
+  padding: 2%;
+  border-radius: 5%;
+}
+
+.sign-up h1 {
+  font-family: Consolas;
+}
+
+.sign-up label {
+  flex-direction: column;
+  margin: 0.4rem 0;
+  font-family: "Comic Sans MS";
+}
+
+.sign-up input {
+  height: 30px;
+  border: none;
+  border: 1px solid #cccc !important;
+  border-radius: 7px;
+  margin: 0.4rem 0;
+}
+
+.sign-up button {
+  color: whitesmoke;
+  font-family: Consolas;
+  margin-top: 2%;
+  width: 100%;
+}
+
+.sign-up button:hover {
+  background-color: #403e39;
+  transition: 0.5s ease;
+}
+
+.sign-up p {
+  text-align: center;
+}

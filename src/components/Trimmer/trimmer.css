@@ -1,0 +1,58 @@
+.trimmer {
+  background-color: #1E3448 ;
+  height: 500px;
+}
+
+.trimmer section {
+  background-color: #ffff;
+  width: 500px;
+  border-radius: 15px;
+  padding: 3%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.trimmer form {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 20px;
+}
+
+.trimmer .customize {
+  display: flex;
+  justify-content: space-between;
+  gap: 3px;
+}
+
+.trimmer form input,
+.customize-dropdown {
+  padding: 17px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 90, 226, 0.7);
+  color: rgba(0, 90, 226, 0.7);
+  white-space: nowrap;
+}
+
+.trimmer button {
+  font-family: "sans-serif", cursive;
+  letter-spacing: 1px;
+  color: white;
+  background-color: blue;
+}
+
+.trimmer button:hover {
+  background-color: rgba(0, 90, 226, 0.8);
+
+}
+
+.trimmer p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.trimmer p a {
+  color: rgba(0, 90, 226, 0.7);
+}

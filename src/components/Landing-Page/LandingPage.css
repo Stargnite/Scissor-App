@@ -1,0 +1,250 @@
+.background-design {
+  /* position: absolute; */
+  z-index: -999;
+  width: 99%;
+  height: 1024px;
+  background: #ffffff;
+}
+
+.background-design .floor {
+  position: absolute;
+  width: 100%;
+  height: 93px;
+  left: 0px;
+  top: 931px;
+  /* z-index: -999; */
+  background: #f8f7f7;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}
+
+.background-design .oval {
+  position: absolute;
+  width: 80%;
+  height: 50px;
+  left: 10%;
+  top: 950px;
+  transofrom: translate(-50%, -50%)
+  border: 1px solid rgba(220, 228, 235, 0.7);
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(226, 233, 240, 0.7) 10.68%,
+    rgba(220, 228, 235, 0.7) 44.01%,
+    rgba(226, 233, 240, 0) 100%
+  );
+  filter: drop-shadow(0px 4px 4px rgba(18, 36, 89, 0.35));
+}
+
+.bg-vector, .bg-vector2, .bg-vector3 {
+  position: absolute;
+  width: 238.55px;
+  height: 251.2px;
+  left: 300px;
+  top: 600.63px;
+
+  background: #e2e9f0;
+  transform: rotate(-29.82deg);
+
+  transform: matrix(-0.5, -0.86, 0.95, -0.31, 0, 0);
+  border-radius: 16% 84% 76% 24% / 49% 42% 58% 51%;
+}
+
+.bg-vector2 {
+  left: 100px;
+  top: 200.63px;
+  border-radius: 16% 84% 15% 85% / 50% 35% 65% 50% ;
+}
+
+.bg-vector3 {
+  left: 75vw;
+  top: 350px;
+  border-radius: 14% 86% 24% 76% / 70% 37% 63% 30% ;
+  
+}
+
+
+/* Navbar styling */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+  font-family: Consolas;
+  white-space: nowrap;
+}
+
+.logo a {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+nav a {
+  font-weight: 300;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 35px;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.nav-links a:hover {
+  color: blue;
+  transition: 0.5s ease;
+}
+
+#log-in {
+  font-size: 23px;
+}
+
+#try-for-free,
+#sign-up {
+  border: 1px solid transparent;
+  padding: 12px 24px;
+  background-color: #005ae2;
+  border-radius: 25px;
+  margin-left: 25px;
+  color: white;
+}
+
+#log-in-btn:hover {
+  color: white;
+}
+
+/* first viewport styling */
+.LP-content {
+  text-align: center;
+}
+
+.home-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.LP-content .home-text h1 {
+  font-size: 2.4rem;
+  font-family: Arial Black;
+  color: #363535;
+  line-height: 70px;
+}
+.intro-highlight {
+  color: blue;
+  text-decoration: underline;
+}
+
+.home-text p {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  margin-top: 50px;
+  width: 781px;
+  height: 105px;
+  font-family: "Gilroy";
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 28px;
+}
+
+#sign-up {
+  font-size: 1.5em;
+  transition: border-color 0.25s;
+  margin-right: 50px;
+}
+
+.learn-more {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #005ae2;
+}
+
+.link-ad {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+  position: absolute;
+  width: 600px;
+  height: 224px;
+  left: calc(50% - 600px / 2 + 110px);
+  top: 631px;
+  background: rgba(254, 254, 254, 0.1);
+  border: 0.5px solid #005ae2;
+  backdrop-filter: blur(106px);
+  border-radius: 24px;
+  box-shadow: 1px 1px 10px;
+}
+
+.link-img .left {
+  border: 2px solid #141414;
+  position: absolute;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: transparent;
+
+  width: 20px;
+  height: 30px;
+  left: 6.17%;
+  right: 4.17%;
+  top: 42.7%;
+  bottom: 29.17%;
+}
+
+.link-img .center {
+  position: absolute;
+  left: 9.5%;
+  right: 4.17%;
+  border-bottom: transparent;
+  border: 2px solid #141414;
+  width: 25px;
+  height: 0;
+}
+
+.link-img .right {
+  border: 2px solid #141414;
+  position: absolute;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-left: none;
+
+  width: 20px;
+  height: 30px;
+  left: 13.17%;
+  right: 4.17%;
+  top: 42.7%;
+  bottom: 29.17%;
+}
+
+.arrow-icon {
+  width: 50px;
+  color: blue;
+  font-size: 3rem;
+}
+
+.link-text {
+  width: 10rem;
+}
+
+/* Responsive styles */

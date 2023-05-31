@@ -1,0 +1,57 @@
+.login-content {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) 
+}
+
+#log-in {
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+	justify-content: center;
+	height: 70vh;
+	width: 70vh;
+	border: 1px solid black;
+	padding: 2%;
+	border-radius: 5%;
+}
+
+#log-in h1 {
+	font-family: Consolas;
+}
+
+#log-in label {
+	flex-direction: column;
+	margin: .4rem 0;
+	font-family: 'Comic Sans MS';
+}
+
+#log-in input {
+	height: 30px;
+	border: none;
+	border: 1px solid #cccc !important;
+	border-radius: 7px;
+	margin: .4rem 0;
+}
+
+
+#log-in button {
+	color: whitesmoke;
+	font-family: Consolas;
+	margin-top: 2%;
+	width: 100%;
+}
+
+#log-in button:hover {
+	background-color: #403e39;
+	transition: .5s ease;
+}
+
+.home-btn {
+	color: white;
+	background-color: #403e39;
+	align-items: center;
+	justify-content: center;
+	margin: 10px 0;
+}
