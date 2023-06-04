@@ -56,3 +56,31 @@
 .trimmer p a {
   color: rgba(0, 90, 226, 0.7);
 }
+
+.short-url {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.short-url p {
+  font-weight: normal;
+  margin-left: 1rem;
+  margin-top: 0;
+  border: 1px solid rgba(0, 90, 226, 0.8);
+  width: 70%;
+  padding: .5rem;
+  border-radius: 4rem;
+  color: gray;
+}
+
+
+/* RESULT STYLING */
+.copied {
+
+}
+
+.loading {
+  text-align: center;
+}

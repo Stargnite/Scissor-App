@@ -1,6 +1,6 @@
-import { useState, useRef, useContext} from "react";
+import { useState, useRef, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
- import AuthContext from "../../store/auth-context";
+import AuthContext from "../../store/auth-context";
 
 import classes from "./AuthForm.module.css";
 
@@ -11,7 +11,7 @@ const AuthForm = () => {
 
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const authCtx = useContext(AuthContext)
+  const authCtx = useContext(AuthContext);
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -44,6 +44,7 @@ const AuthForm = () => {
       .then((res) => {
         setIsLoading(false);
         if (res.ok) {
+          // console.log(res.json);
           return res.json();
         } else {
           return res.json().then((data) => {
@@ -57,12 +58,15 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken);
-        navigate('/dashboard')
+        const expirationTime = new Date(
+          new Date().getTime() + +data.expiresIn * 1000
+        );
+        authCtx.login(data.idToken, expirationTime.toISOString());
+        navigate("/dashboard");
       })
       .catch((err) => {
         alert(err.message);
-        setIsLoading(false)
+        setIsLoading(false);
       });
   };
 
@@ -98,7 +102,11 @@ const AuthForm = () => {
         </div>
       </form>
       <Link to="/">
-        <button type="submit" className="home-btn" onClick={() => navigate('/')}>
+        <button
+          type="submit"
+          className="home-btn"
+          onClick={() => navigate("/")}
+        >
           {" "}
           Go Home
         </button>

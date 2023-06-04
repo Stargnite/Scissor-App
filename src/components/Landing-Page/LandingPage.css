@@ -247,4 +247,26 @@ nav a {
   width: 10rem;
 }
 
+.get-started {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 7% 0;
+  background: linear-gradient(180deg, #1E3448 99.99%, rgba(30, 52, 72, 0) 100%);
+  color: white;
+  font-family: sans-serif, Gilroy;
+}
+.get-started h1 {
+  margin-bottom: 4%; 
+}
+.get-started button {
+  background-color: #005AE2;
+  color: inherit;
+  max-width: 20%;
+  letter-spacing: 0.1rem;
+}
+
+
 /* Responsive styles */

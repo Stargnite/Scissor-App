@@ -1,0 +1,4 @@
+.dashboard .header {
+	display: flex;
+	flex-direction: space-between;
+}

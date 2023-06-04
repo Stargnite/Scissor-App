@@ -1,26 +1,30 @@
-import React, { useContext } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import AuthContext  from './../../store/auth-context'
+import "./dashboard.css";
+import React, { useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import AuthContext from "./../../store/auth-context";
+import Trimmer from "./../Trimmer/Trimmer";
 
 export default function Dashboard() {
-	// const params = useParams();
-	// const userId = params.userId;
-	const authCtx = useContext(AuthContext)
+  const params = useParams();
+  // const userId = params.userId;
+  const authCtx = useContext(AuthContext);
 
-	const navigate = useNavigate()
+  const navigate = useNavigate();
 
-	const handleLogout = () => {
-		navigate('/login');
-		authCtx.logout();
-	}
+  const handleLogout = () => {
+    navigate("/login");
+    authCtx.logout();
+  };
 
   return (
-	<div>
-	 <button className="btn" onClick={handleLogout}>
+    <div className="dashboard">
+      <div className="header">
+        <h1 className="logo">Scissor</h1>
+        <button className="btn" onClick={handleLogout}>
           logout
         </button>
-	 <h1>This is the dashboard for user</h1>
-
-	</div>
-  )
+      </div>
+      <Trimmer />
+    </div>
+  );
 }

@@ -1,22 +1,27 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useContext } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import LandingPage from "../Landing-Page/LandingPage";
 import AuthForm from "../Authentication/AuthForm";
 const LazyAboutPage = React.lazy(() => import("../About-Page/AboutPage"));
 const LazyDashboard = React.lazy(() => import("../Dashboard/Dashboard"));
+import AuthContext from "../../store/auth-context";
+import NotFound from "../pageNotFound/NotFound";
 
 export default function NavRoutes() {
-  
+  const authCtx = useContext(AuthContext);
+
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/signup" element={<AuthForm />} />
       <Route path="/login" element={<AuthForm />} />
+
       <Route
         path="/dashboard"
         element={
           <React.Suspense fallback="Loading...">
-            <LazyDashboard />
+            {authCtx.isLoggedIn && <LazyDashboard />}
+            {!authCtx.isLoggedIn && <Navigate to='/login' />}
           </React.Suspense>
         }
       />
@@ -28,6 +33,7 @@ export default function NavRoutes() {
           </React.Suspense>
         }
       />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

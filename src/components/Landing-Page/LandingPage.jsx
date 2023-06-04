@@ -1,12 +1,26 @@
 import "./LandingPage.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import ViewPort2 from "./ViewPort2";
 import Trimmer from "../Trimmer/Trimmer";
 import FAQ from "./FAQ-section/FAQ";
 import Footer from "./footer/Footer";
+import { useState, useContext } from "react";
+import AuthContext from "../../store/auth-context";
 
 export default function LandingPage() {
+  const authCtx = useContext(AuthContext);
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate()
+
+  const handleGetStarted = () => {
+    if(authCtx.token) {
+      navigate("/dashboard");
+    } else {
+      navigate('/login')
+    }
+  }
+
   return (
     <>
       <div className="background-design">
@@ -89,7 +103,10 @@ export default function LandingPage() {
         </div>
       </div>
       <ViewPort2 />
-      <Trimmer />
+      <div className="get-started">
+        <h1>Revolutionizing Link Optimization</h1>
+        <button onClick={handleGetStarted}>Get Started</button>
+      </div>
       <FAQ />
       <Footer />
       <div className="year-created">
