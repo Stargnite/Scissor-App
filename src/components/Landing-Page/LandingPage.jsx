@@ -1,42 +1,42 @@
-import "./LandingPage.css";
+import classes from"./LandingPage.module.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import ViewPort2 from "./ViewPort2";
 import Trimmer from "../Trimmer/Trimmer";
 import FAQ from "./FAQ-section/FAQ";
 import Footer from "./footer/Footer";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
 
 export default function LandingPage() {
   const authCtx = useContext(AuthContext);
-  const [isLoggedIn, setLoggedIn] = useState(false);
-  const navigate = useNavigate()
+
+  const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    if(authCtx.token) {
+    if (authCtx.token) {
       navigate("/dashboard");
     } else {
-      navigate('/login')
+      navigate("/login");
     }
-  }
+  };
 
   return (
     <>
-      <div className="background-design">
-        <div className="floor"></div>
-        <div className="oval"></div>
-        <div className="bg-vector"></div>
-        <div className="bg-vector2"></div>
-        <div className="bg-vector3"></div>
+      <div className={classes.background_design}>
+        <div className={classes.floor}></div>
+        <div className={classes.oval}></div>
+        <div className={classes.bg_vector}></div>
+        <div className={classes.bg_vector2}></div>
+        <div className={classes.bg_vector3}></div>
       </div>
-      <div className="home-first-vp">
+      <div className={classes.home_first_vp}>
         <nav>
-          <div className="navbar">
-            <div className="logo">
-              <NavLink to="/">Scissor</NavLink>
+          <div className={classes.navbar}>
+            <div className={classes.logo}>
+              <NavLink to="/">SCISSOR</NavLink>
             </div>
-            <ul className="nav-links">
+            <ul className={classes.nav_links}>
               <li>
                 <NavLink to="/">My URLs</NavLink>
               </li>
@@ -55,22 +55,22 @@ export default function LandingPage() {
             </ul>
 
             <div className="access-btns">
-              <Link to="/login" id="log-in">
+              <Link to="/login" className={classes.log_in}>
                 Log in
               </Link>
-              <Link to="/login" id="try-for-free">
+              <Link to="/login" className={classes.try_for_free}>
                 Try for free
               </Link>
             </div>
           </div>
         </nav>
 
-        <div className="LP-content">
-          <div className="home-text">
+        <div className={classes.LP_content}>
+          <div className={classes.home_text} >
             <h1>
               {" "}
               Optimize Your Online Experience with Our Advanced{" "}
-              <span className="intro-highlight">URL Shortening</span> Solution
+              <span className={classes.intro_highlight}>URL Shortening</span> Solution
             </h1>
             <p>
               Personalize your shortened URLs to align with your brand identity.
@@ -79,22 +79,26 @@ export default function LandingPage() {
               engagement.
             </p>
 
-            <button id="sign-up">Sign Up</button>
-            <a href="" className="learn-more">
+            <button onClick={() => {}}>
+              <Link to="/login" className={classes.sign_up}>
+                Sign Up
+              </Link>
+            </button>
+            <a href="" className={classes.learn_more}>
               Learn more
             </a>
           </div>
         </div>
-        <div className="link-ad">
-          <div className="link-img">
-            <div className="left"></div>
-            <div className="center"></div>
-            <div className="right"></div>
+        <div className={classes.link_ad}>
+          <div className={classes.link_img}>
+            <div className={classes.left}></div>
+            <div className={classes.center}></div>
+            <div className={classes.right}></div>
           </div>
-          <div className="arrow">
-            <FaArrowRight className="arrow-icon" />
+          <div className={classes.arrow}>
+            <FaArrowRight className={classes.arrow_icon} />
           </div>
-          <div className="link-text">
+          <div className={classes.link_text}>
             <p>
               Seamlessly transform your long URLs into concise and shareable
               links with just few clicks.
@@ -103,13 +107,13 @@ export default function LandingPage() {
         </div>
       </div>
       <ViewPort2 />
-      <div className="get-started">
+      <div className={classes.get_started}>
         <h1>Revolutionizing Link Optimization</h1>
         <button onClick={handleGetStarted}>Get Started</button>
       </div>
       <FAQ />
       <Footer />
-      <div className="year-created">
+      <div className={classes.year_created}>
         <p>Terms of Service | Security | 2023 Scissor </p>
       </div>
     </>

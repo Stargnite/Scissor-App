@@ -1,4 +1,4 @@
-.login-content {
+.signup_content {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -6,34 +6,39 @@
   color: #5c6f7f;
   font-family: sans-serif;
 }
-#log_in {
+.signup_content a {
+  text-decoration: none;
+  color: #005ae2;
+}
+
+.sign_up {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 
-.auto_login h5 {
+.auto_signup h5 {
   text-align: center;
   margin-bottom: 5%;
 }
-.auto_login_btn {
+.auto_signup_btn {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.auto_login_text {
+.auto_signup_text {
   margin-left: 0.5rem;
 }
 
-.auto_login_btn button {
+.auto_signup_btn button {
   border-radius: 3px;
   margin-right: 5%;
   background: #005ae2;
   color: white;
   display: flex;
 }
-.auto_login p {
+.auto_signup p {
   margin: 1rem;
   text-align: center;
 }
@@ -55,35 +60,40 @@
 .password_cont {
   display: flex;
 }
+
 .pass_toggle {
   display: flex;
   margin-top: 2.5%;
   margin-left: -2rem;
+  color: blue;
 }
 
-.forgot {
-  text-align: right;
-  margin-bottom: 3%;
-  text-decoration: none;
-  color: #005ae2;
+.pass_desc {
+  font-size: 12px;
+  white-space: nowrap;
+  margin-top: -3%;
+  margin-bottom: 5%;
 }
 
-.login_btn {
-  width: 85%;
+.signup_btn {
+  width: 80%;
   background: #005ae2;
   color: white;
+  font-weight: normal;
 }
 
-.to_signup {
+.to_login {
   margin: 1rem 0;
 }
 
 .terms_condition {
   text-align: center;
   width: 30rem;
+  font-size: 12px;
 }
 
-.login-content a {
+.signup-content a {
   text-decoration: none;
   color: #005ae2;
 }
+

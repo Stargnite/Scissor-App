@@ -1,6 +1,7 @@
 import { useState, useRef, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
+import LoadingGif from '../../assets/loadingGIF.gif'
 
 import classes from "./AuthForm.module.css";
 
@@ -11,11 +12,8 @@ const AuthForm = () => {
 
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const authCtx = useContext(AuthContext);
 
-  const switchAuthModeHandler = () => {
-    setIsLogin((prevState) => !prevState);
-  };
+  const authCtx = useContext(AuthContext);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -74,6 +72,16 @@ const AuthForm = () => {
     <section className={classes.auth}>
       <h1>{isLogin ? "Login" : "Sign Up"}</h1>
       <form onSubmit={submitHandler}>
+        {/* {!isLogin ? (
+          <div className={classes.control}>
+            <label htmlFor="username">Username</label>
+            <input type="text" id="username" required onChange={(e) => {
+              setEnteredUsername(e.target.value);
+            }} />
+          </div>
+        ) : (
+          ""
+        )} */}
         <div className={classes.control}>
           <label htmlFor="email">Your Email</label>
           <input type="email" id="email" required ref={emailInputRef} />
@@ -91,7 +99,7 @@ const AuthForm = () => {
           {!isLoading && (
             <button>{isLogin ? "Login" : "Create Account"}</button>
           )}
-          {isLoading && <p>processing...</p>}
+          {isLoading && <img src={LoadingGif} alt="Loading..." className={classes.loading} />}
           <button
             type="button"
             className={classes.toggle}
@@ -104,7 +112,7 @@ const AuthForm = () => {
       <Link to="/">
         <button
           type="submit"
-          className="home-btn"
+          className={classes.home_btn}
           onClick={() => navigate("/")}
         >
           {" "}

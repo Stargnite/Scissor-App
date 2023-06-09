@@ -58,6 +58,7 @@ const FAQ = () => {
         ariaExpanded={ariaExpanded}
         item={item}
         index={index}
+        key={index}
         onClick={() => {
           setActiveIndex(index);
         }}

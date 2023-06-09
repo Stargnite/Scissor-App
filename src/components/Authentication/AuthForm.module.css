@@ -3,20 +3,24 @@
   width: 95%;
   max-width: 25rem;
   border-radius: 6px;
-  background-color: #38015c;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  background-color: #010175;
   padding: 1rem;
   text-align: center;
   color: white;
+  box-shadow:  35px 35px 58px #b7b7c0,
+  -35px -35px 58px #ffffff;
 }
 
 .auth h1 {
   text-align: center;
   color: white;
+  font-family: sans-serif;
+  font-weight: 700;
 }
 
 .control {
-  margin-bottom: 0.5rem;
+  margin: 1.5rem;
+
 }
 
 .control label {
@@ -29,7 +33,7 @@
 .control input {
   font: inherit;
   background-color: #f1e1fc;
-  color: #38015c;
+  /* color: #; */
   border-radius: 4px;
   border: 1px solid white;
   width: 100%;
@@ -48,34 +52,42 @@
   cursor: pointer;
   font: inherit;
   color: white;
-  background-color: #9f5ccc;
-  border: 1px solid #9f5ccc;
+  background-color: blue;
+  border: 1px solid blue;
   border-radius: 4px;
   padding: 0.5rem 2.5rem;
 }
 
 .actions button:hover {
-  background-color: #873abb;
-  border-color: #873abb;
+  background-color: #4040f5;
+  border-color: #4040f5;
 }
 
 .actions .toggle {
   margin-top: 1rem;
   background-color: transparent;
-  color: #9f5ccc;
+  color: white;
   border: none;
   padding: 0.15rem 1.5rem;
 }
 
 .actions .toggle:hover {
   background-color: transparent;
-  color: #ae82cc;
+  text-decoration: underline;
 }
 
-.home-btn {
+.loading {
+  display: flex;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.home_btn {
   color: white;
   background-color: #403e39;
   align-items: center;
   justify-content: center;
-  margin: 10px 0;
+  margin: 2rem 0;
+
 }

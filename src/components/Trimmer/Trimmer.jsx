@@ -8,6 +8,7 @@ const Trimmer = () => {
   const [shortLink, setShortLink] = useState("");
   const [inputLink, setInputLink] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [alias, setAlias] = useState("");
 
   const fetchData = async () => {
     try {
@@ -16,7 +17,7 @@ const Trimmer = () => {
         `https://api.shrtco.de/v2/shorten?url=${inputLink}`
       );
       setShortLink(res.data.result.full_short_link);
-      console.log(res.data)
+      console.log(res.data);
     } catch (err) {
       console.log(err);
     } finally {
@@ -37,7 +38,13 @@ const Trimmer = () => {
           />
           <div className="customize">
             <div className="customize-dropdown">Customize domain</div>
-            <input type="text" placeholder="Type Alias here" />
+            <input
+              type="text"
+              placeholder="Type Alias here"
+              onChange={(e) => {
+                setAlias(e.target.value);
+              }}
+            />
           </div>
           <button
             type="submit"

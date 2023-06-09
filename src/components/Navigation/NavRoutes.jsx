@@ -6,6 +6,8 @@ const LazyAboutPage = React.lazy(() => import("../About-Page/AboutPage"));
 const LazyDashboard = React.lazy(() => import("../Dashboard/Dashboard"));
 import AuthContext from "../../store/auth-context";
 import NotFound from "../pageNotFound/NotFound";
+import Login from "../LogIn-Page/Login";
+import Signup from "../Signup-Page/Signup";
 
 export default function NavRoutes() {
   const authCtx = useContext(AuthContext);
@@ -13,8 +15,8 @@ export default function NavRoutes() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/signup" element={<AuthForm />} />
-      <Route path="/login" element={<AuthForm />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
 
       <Route
         path="/dashboard"
