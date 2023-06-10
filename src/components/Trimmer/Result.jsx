@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./trimmer.css";
 import CopyToClipboard from "react-copy-to-clipboard";
+import LoadingGIF from '../../assets/loadingGIF.gif'
 
 const Result = ({ isLoading, shortLink }) => {
   const [copied, setCopied] = useState(false);
@@ -13,7 +14,8 @@ const Result = ({ isLoading, shortLink }) => {
   }, [copied]);
 
   if(isLoading) {
-	return <p className="loading">Loading...</p>
+    return <img src={LoadingGIF} className="loading_shrt_url" alt="Loading..." />
+	// return <p className="loading">Loading...</p>
   }
 
   return (

@@ -1,5 +1,5 @@
 .trimmer {
-  background-color: #1E3448 ;
+  background-color: #1e3448;
   height: 500px;
 }
 
@@ -44,7 +44,6 @@
 
 .trimmer button:hover {
   background-color: rgba(0, 90, 226, 0.8);
-
 }
 
 .trimmer p {
@@ -70,17 +69,20 @@
   margin-top: 0;
   border: 1px solid rgba(0, 90, 226, 0.8);
   width: 70%;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 4rem;
   color: gray;
 }
 
-
 /* RESULT STYLING */
 .copied {
-
 }
 
-.loading {
-  text-align: center;
+.loading_shrt_url {
+  position: relative;
+  top: 50;
+  left: 50;
+  transform: translate(-50%, -50%);
+  width: 1.5rem;
+  height: 1.5rem;
 }

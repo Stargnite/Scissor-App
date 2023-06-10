@@ -36,7 +36,9 @@
   filter: drop-shadow(0px 4px 4px rgba(18, 36, 89, 0.35));
 }
 
-.bg_vector, .bg_vector2, .bg_vector3 {
+.bg_vector,
+.bg_vector2,
+.bg_vector3 {
   position: absolute;
   width: 238.55px;
   height: 251.2px;
@@ -53,16 +55,14 @@
 .bg_vector2 {
   left: 100px;
   top: 200.63px;
-  border-radius: 16% 84% 15% 85% / 50% 35% 65% 50% ;
+  border-radius: 16% 84% 15% 85% / 50% 35% 65% 50%;
 }
 
 .bg_vector3 {
   left: 75vw;
   top: 350px;
-  border-radius: 14% 86% 24% 76% / 70% 37% 63% 30% ;
-  
+  border-radius: 14% 86% 24% 76% / 70% 37% 63% 30%;
 }
-
 
 /* Navbar styling */
 .navbar {
@@ -78,6 +78,9 @@
   white-space: nowrap;
 }
 
+.logo {
+  margin-right: 5%;
+}
 .logo a {
   font-size: 30px;
   text-decoration: none;
@@ -109,8 +112,16 @@ nav a {
   transition: 0.5s ease;
 }
 
+.toggle_btn {
+  display: none;
+}
+.access_btns_small {
+  display: none;
+}
+
 .log_in {
   font-size: 23px;
+
 }
 
 .try_for_free,
@@ -158,7 +169,7 @@ nav a {
   margin-top: 50px;
   width: 781px;
   height: 105px;
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-weight: 500;
   font-size: 1.3rem;
   line-height: 28px;
@@ -166,9 +177,10 @@ nav a {
 
 .sign_up {
   font-size: 1.5em;
-  transition: border-color 0.25s;
   margin-right: 50px;
   text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 700;
 }
 
 .learn_more {
@@ -189,7 +201,7 @@ nav a {
   width: 600px;
   height: 224px;
   left: calc(50% - 600px / 2 + 110px);
-  top: 631px;
+  top: 645px;
   background: rgba(254, 254, 254, 0.1);
   border: 0.5px solid #005ae2;
   backdrop-filter: blur(106px);
@@ -254,19 +266,149 @@ nav a {
   align-items: center;
   width: 100%;
   padding: 7% 0;
-  background: linear-gradient(180deg, #1E3448 99.99%, rgba(30, 52, 72, 0) 100%);
+  background: linear-gradient(180deg, #1e3448 99.99%, rgba(30, 52, 72, 0) 100%);
   color: white;
   font-family: sans-serif, Gilroy;
 }
 .get_started h1 {
-  margin-bottom: 4%; 
+  margin-bottom: 4%;
 }
 .get_started button {
-  background-color: #005AE2;
+  background-color: #005ae2;
   color: inherit;
-  max-width: 20%;
+  width: auto;
   letter-spacing: 0.1rem;
+  white-space: nowrap;
 }
 
 
-/* Responsive styles */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE STYLING */
+@media (max-width: 770px) {
+  /* NAVBAR STYLING START */
+  .nav_links {
+    display: none;
+    z-index: 999;
+  }
+  .access_btns {
+    display: none;
+  }
+  .access_btns_small {
+    display: block;
+  }
+  .toggle_btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 2% !important;
+    right: 5%;
+    z-index: 999;
+    transition: 1s ease-in-out;
+
+  }
+  .sidebarOpen .nav_links {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 200%;
+    height: 100vh;
+  }
+  .nav_links li {
+    padding: 5% 1%;
+  }
+  .access_btns_small {
+    margin-top: 5%;
+  }
+  .access_btns_small .log_in {
+    color: blue;
+  }
+  .access_btns_small .try_for_free {
+    color: #fff;
+  }
+    /* NAVBAR STYLING ENDS */
+
+
+
+    /* FIRST VIEWPORT STYLING STARTS */
+    .bg_vector3, .bg_vector {
+      display: none;
+    }
+    .LP_content .home_text h1 {
+      font-size: 1.7rem;
+      line-height: 40px;
+      width: 30rem;
+    }
+
+    .LP_content .home_text p {
+      width: auto;
+      font-size: 1rem;
+    }
+    
+    .home_vp_links {
+      margin-top: 10%;
+    }
+
+    .link_ad {
+      width: auto;
+      top: 550px;
+    }
+    .link_img .center {
+      top: 49%;
+      left: 9.4%;
+    }
+    .link_text {
+      text-align: center;
+      width: 12rem;
+    }
+}
+

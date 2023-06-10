@@ -1,11 +1,11 @@
-import classes from"./LandingPage.module.css";
+import classes from "./LandingPage.module.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaBars } from "react-icons/fa";
 import ViewPort2 from "./ViewPort2";
 import Trimmer from "../Trimmer/Trimmer";
 import FAQ from "./FAQ-section/FAQ";
 import Footer from "./footer/Footer";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../../store/auth-context";
 
 export default function LandingPage() {
@@ -21,6 +21,12 @@ export default function LandingPage() {
     }
   };
 
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const handleToggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
     <>
       <div className={classes.background_design}>
@@ -32,45 +38,74 @@ export default function LandingPage() {
       </div>
       <div className={classes.home_first_vp}>
         <nav>
-          <div className={classes.navbar}>
+          <div
+            className={`${classes.navbar} ${
+              sidebarOpen ? classes.sidebarOpen : ""
+            }`}
+          >
             <div className={classes.logo}>
-              <NavLink to="/">SCISSOR</NavLink>
+              <NavLink to="/">{!sidebarOpen && "SCISSOR"}</NavLink>
             </div>
             <ul className={classes.nav_links}>
               <li>
-                <NavLink to="/">My URLs</NavLink>
+                <NavLink to="/" className={classes.navLink}>
+                  My URLs
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/">Features</NavLink>
+                <NavLink to="/" className={classes.navLink}>
+                  Features
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/">Pricing</NavLink>
+                <NavLink to="/" className={classes.navLink}>
+                  Pricing
+                </NavLink>
               </li>
               <li>
-                <NavLink to="">Analytics</NavLink>
+                <NavLink to="/" className={classes.navLink}>
+                  Analytics
+                </NavLink>
               </li>
               <li>
-                <NavLink to="">FAQs</NavLink>
+                <NavLink to="/" className={classes.navLink}>
+                  FAQs
+                </NavLink>
               </li>
+
+              <div className={classes.access_btns_small}>
+                <Link to="/login" className={classes.log_in}>
+                  Log in
+                </Link>
+                <Link to="/signup" className={classes.try_for_free}>
+                  Try for free
+                </Link>
+              </div>
             </ul>
 
-            <div className="access-btns">
+            <div className={classes.access_btns}>
               <Link to="/login" className={classes.log_in}>
                 Log in
               </Link>
-              <Link to="/login" className={classes.try_for_free}>
+              <Link to="/signup" className={classes.try_for_free}>
                 Try for free
               </Link>
+            </div>
+            <div className={classes.toggle_btn} onClick={handleToggleSidebar}>
+              <FaBars />
             </div>
           </div>
         </nav>
 
         <div className={classes.LP_content}>
-          <div className={classes.home_text} >
+          <div className={classes.home_text}>
             <h1>
               {" "}
               Optimize Your Online Experience with Our Advanced{" "}
-              <span className={classes.intro_highlight}>URL Shortening</span> Solution
+              <span className={classes.intro_highlight}>
+                URL Shortening
+              </span>{" "}
+              Solution
             </h1>
             <p>
               Personalize your shortened URLs to align with your brand identity.
@@ -79,14 +114,14 @@ export default function LandingPage() {
               engagement.
             </p>
 
-            <button onClick={() => {}}>
-              <Link to="/login" className={classes.sign_up}>
-                Sign Up
-              </Link>
-            </button>
+            <div className={classes.home_vp_links}>   
+            <Link to="/signup" className={classes.sign_up}>
+              Sign Up
+            </Link>
             <a href="" className={classes.learn_more}>
               Learn more
             </a>
+            </div>
           </div>
         </div>
         <div className={classes.link_ad}>

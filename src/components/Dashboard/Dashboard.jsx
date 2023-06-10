@@ -20,7 +20,7 @@ export default function Dashboard() {
   const handleLogout = async() => {
     try {
       await signOut(auth)
-      alert('logged out')
+      alert('log out successful')
       navigate("/login");
       authCtx.logout();
     } catch (err) {
@@ -32,11 +32,10 @@ export default function Dashboard() {
     <div className="dashboard">
       <div className="header">
         <h1 className="logo">Scissor</h1>
-        <p>{currentUser ? currentUser.email : "someone"}</p>
+        <p>{currentUser ? currentUser.displayName : "someone"}</p>
         <button className="btn" onClick={handleLogout}>
           logout
         </button>
-        <p>{username}</p>
       </div>
       <Trimmer />
     </div>

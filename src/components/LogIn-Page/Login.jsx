@@ -5,6 +5,7 @@ import { auth, provider, db } from "../Authentication/Firebase/firebase";
 import { signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
 import { FaGoogle, FaApple, FaRegEye } from "react-icons/fa";
 import AuthContext from "../../store/auth-context";
+import LoadingGIF from "./../../assets/loadingGIF.gif";
 
 export default function Login() {
   const emailInputRef = useRef();
@@ -25,7 +26,10 @@ export default function Login() {
     try {
       const userCredential = await signInWithPopup(auth, provider);
       const user = userCredential.user;
-      authCtx.login(user.email);
+      const expirationTime = new Date(
+        new Date().getTime() + 86400000 * 1000
+      );
+      authCtx.login(user.email, expirationTime.toISOString(), user);
       navigate("/dashboard");
       setIsLoading(false);
     } catch (error) {
@@ -34,34 +38,36 @@ export default function Login() {
   };
 
   const signInWithApple = () => {
-
-  }
+    alert("Not available for now, kindly sign in with other options");
+    return;
+  };
 
   const submitLogin = (e) => {
     e.preventDefault();
 
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
-    
-    // const expirationTime = new Date(
-      //   new Date().getTime() + +data.expiresIn * 1000
-      // );
-      
-      (async () => {
-        try {
-          setIsLoading(true);
-          const userCredential = await signInWithEmailAndPassword(
+
+    (async () => {
+      try {
+        setIsLoading(true);
+        const userCredential = await signInWithEmailAndPassword(
           auth,
           enteredEmail,
           enteredPassword
         );
-        const user = userCredential.user;
-        console.log("user>>>", user.email);
-        authCtx.login(user.email);
+        let user = userCredential.user;
+        // user.displayName = user.email;
+        const expirationTime = new Date(
+          new Date().getTime() + 86400000 * 1000
+        );
+        authCtx.login(user.email, expirationTime.toISOString(), user);
         navigate("/dashboard");
+        console.log('login successful')
         setIsLoading(false);
       } catch (error) {
-        console.log(error);
+        setIsLoading(false);
+        alert(error.message);
       }
     })();
   };
@@ -71,13 +77,11 @@ export default function Login() {
       <div className="auto_login">
         <h5>Log in with:</h5>
         <div className="auto_login_btn">
-          <button>
+          <button onClick={signInWithGoogle}>
             <FaGoogle />
-            <div className="auto_login_text" onClick={signInWithGoogle}>
-              Google
-            </div>
+            <div className="auto_login_text">Google</div>
           </button>
-          <button>
+          <button onClick={signInWithApple}>
             <FaApple />
             <div className="auto_login_text">Apple</div>
           </button>
@@ -111,8 +115,12 @@ export default function Login() {
             <p>Forgot your password?</p>
           </a>
         </div>
-        <button className="login_btn" type="submit">
-          Log in
+        <button className="login_btn" disabled={isLoading} type="submit">
+          {isLoading ? (
+            <img src={LoadingGIF} alt="Loading..." className="loading" />
+          ) : (
+            "Log in"
+          )}
         </button>
         <p className="to_signup">
           Don't have an account? <Link to="/signup">Signup</Link>

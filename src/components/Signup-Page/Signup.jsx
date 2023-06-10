@@ -5,13 +5,18 @@ import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, provider, db } from "../Authentication/Firebase/firebase";
 import { FaGoogle, FaApple, FaRegEye } from "react-icons/fa";
 import AuthContext from "./../../store/auth-context";
+import LoadingGif from "../../assets/loadingGIF.gif";
 
 const Signup = () => {
-  const [username, setUsername] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [confirmedPass, setConfirmedPass] = useState("");
-  // const [passwordMatch, setPasswordMathch] = useState(false);
+
+  const usernameInputRef = useRef();
+  const emailInputRef = useRef();
+  const passwordInputRef = useRef();
+  const navigate = useNavigate();
+  const authCtx = useContext(AuthContext);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -22,31 +27,34 @@ const Signup = () => {
     try {
       const userCredential = await signInWithPopup(auth, provider);
       const user = userCredential.user;
-      authCtx.login(user.email);
+      const expirationTime = new Date(
+        new Date().getTime() + 86400000 * 1000
+      );
+      authCtx.login(user.email, expirationTime.toISOString(), user);
       navigate("/dashboard");
       setIsLoading(false);
     } catch (error) {
-      console.log("error:", error);
+      alert(error.message);
+      console.log("error:", error.message);
     }
   };
 
-  const emailInputRef = useRef();
-  const passwordInputRef = useRef();
-  const navigate = useNavigate();
-
-  const [isLogin, setIsLogin] = useState(true);
-
-  const authCtx = useContext(AuthContext);
+  const signInWithApple = () => {
+    alert("Not available for now, kindly sign in with other options");
+    return;
+  };
 
   const submitSignUp = (e) => {
     e.preventDefault();
 
+    const enteredUsername = usernameInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
     let enteredPassword;
     if (passwordInputRef.current.value === confirmedPass) {
       enteredPassword = passwordInputRef.current.value;
     } else {
       alert("Password don't match");
+      return;
     }
     (async () => {
       try {
@@ -56,13 +64,19 @@ const Signup = () => {
           enteredEmail,
           enteredPassword
         );
-        const user = userCredential.user;
-        console.log("user>>>", user.email);
-        authCtx.login(user.email);
+        let user = userCredential.user;
+        user.displayName = enteredUsername;
+        const expirationTime = new Date(
+          new Date().getTime() + 86400000 * 1000
+        );
+        authCtx.login(user.email, expirationTime.toISOString(), user);
         navigate("/dashboard");
+        
         setIsLoading(false);
       } catch (error) {
-        console.log(error);
+        setIsLoading(false);
+        alert(error.message);
+        return;
       }
     })();
   };
@@ -77,7 +91,7 @@ const Signup = () => {
             <div className={classes.auto_signup_text}>Google</div>
           </button>
           <button>
-            <FaApple />
+            <FaApple onClick={signInWithApple} />
             <div className={classes.auto_signup_text}>Apple</div>
           </button>
         </div>
@@ -89,7 +103,7 @@ const Signup = () => {
             type="text"
             id="username"
             placeholder="Username"
-            ref={emailInputRef}
+            ref={usernameInputRef}
             required
           />
           <input
@@ -131,8 +145,20 @@ const Signup = () => {
           </p>
         </div>
 
-        <button className={classes.signup_btn} type="submit">
-          Sign up with Email
+        <button
+          className={classes.signup_btn}
+          disabled={isLoading}
+          type="submit"
+        >
+          {isLoading ? (
+            <img
+              src={LoadingGif}
+              alt="Loading..."
+              className={classes.loading}
+            />
+          ) : (
+            "Sign up"
+          )}
         </button>
 
         <p className={classes.to_login}>

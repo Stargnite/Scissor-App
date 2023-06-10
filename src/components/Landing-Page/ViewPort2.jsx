@@ -5,7 +5,7 @@ const ViewPort2 = () => {
   return (
       <div className="v2-content">
         <div className="content1">
-          <h1 className="header">One Stop. <br /> Four Possibilities.</h1>
+          <h1 className="header"><span>One Stop</span>.<br /> Four Possibilities.</h1>
           <div className="content1-numbers">
             <div className="analytics">
               <h1>3M</h1>
@@ -37,7 +37,7 @@ const ViewPort2 = () => {
             <h1>Custom URLs</h1>
             <p>
               With Scissor, you can create custom URLs, with the length you
-              want! A solution for socials and businesses.
+              want!.A solution for socials and businesses.
             </p>
           </div>
           <div className="features">
