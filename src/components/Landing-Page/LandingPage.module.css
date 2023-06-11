@@ -167,8 +167,7 @@ nav a {
   left: 50%;
   transform: translate(-50%, -20%);
   margin-top: 50px;
-  width: 781px;
-  height: 105px;
+  margin-bottom: 10px;
   font-family: "Gilroy", sans-serif;
   font-weight: 500;
   font-size: 1.3rem;
@@ -176,7 +175,7 @@ nav a {
 }
 
 .sign_up {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin-right: 50px;
   text-decoration: none;
   font-family: sans-serif;
@@ -198,13 +197,13 @@ nav a {
   padding: 40px;
   gap: 40px;
   position: absolute;
-  width: 600px;
-  height: 224px;
+  width: auto;
+  height: auto;
   left: calc(50% - 600px / 2 + 110px);
   top: 645px;
   background: rgba(254, 254, 254, 0.1);
   border: 0.5px solid #005ae2;
-  backdrop-filter: blur(106px);
+  /* backdrop-filter: blur(106px); */
   border-radius: 24px;
   box-shadow: 1px 1px 10px;
 }
@@ -250,13 +249,13 @@ nav a {
 }
 
 .arrow_icon {
-  width: 50px;
+  width: 30px;
   color: blue;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .link_text {
-  width: 10rem;
+  width: auto;
 }
 
 .get_started {
@@ -280,6 +279,8 @@ nav a {
   letter-spacing: 0.1rem;
   white-space: nowrap;
 }
+
+
 
 
 
@@ -386,7 +387,7 @@ nav a {
     .LP_content .home_text h1 {
       font-size: 1.7rem;
       line-height: 40px;
-      width: 30rem;
+      width: auto;
     }
 
     .LP_content .home_text p {
@@ -395,7 +396,7 @@ nav a {
     }
     
     .home_vp_links {
-      margin-top: 10%;
+      margin-top: auto;
     }
 
     .link_ad {
@@ -412,3 +413,36 @@ nav a {
     }
 }
 
+
+
+
+
+
+
+
+/* MOBILE RESPONSIVE STYLING */
+@media (max-width: 400px) {
+  .LP_content .home_text h1 {
+    margin-top: 15%;
+    font-size: 1.2rem;
+  }
+
+  .home_vp_links .sign_up {
+    font-size: 1rem;
+    margin-right: 20px;
+    margin-left: 0;
+  }
+
+  .link_ad {
+    width: 70vw;
+    padding: 1rem;
+    margin-left: 3rem;
+  }
+
+  
+  .bg_vector2, .link_img .left, .center, .right {
+    display: none;
+  }
+
+
+}

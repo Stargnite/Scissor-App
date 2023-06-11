@@ -82,6 +82,7 @@ $light-grayish-blue: hsl(240, 5%, 91%);
 
 /* Arrows */
 
+
 /* closed */
 .faq__question-button::after {
   transition: transform 300ms ease-out;
@@ -113,10 +114,3 @@ $light-grayish-blue: hsl(240, 5%, 91%);
   border-radius: 23px;
   display: flex;
 }
-
-
-// @media screen(max-width:770px) {
-//   .faq__question-button {
-//     font-size: 1rem; 
-//   }
-// }  

@@ -31,6 +31,10 @@
   line-height: 24px;
 }
 
+.content1 .header span {
+  color: blue;
+}
+
 .v2-content .content1 .header {
 	font-family: 'serif', 'Helvetica';
 	line-height: 38px;
@@ -50,7 +54,7 @@
 @media (max-width: 770px) {
   .v2-content {
     flex-direction: column;
-    padding: 5% 0;
+    /* padding: 5% 0; */
   }
   .v2-content .content1 {
     display: flex;
@@ -60,9 +64,6 @@
   .content1 .header {
     font-size: 1.4rem;
     margin: 5%;
-  }
-  .content1 .header span {
-    color: blue;
   }
   .analytics p {
     width: 7rem;
@@ -84,9 +85,39 @@
   .features {
     width: 10rem;
   }
-  .features p {
-    width: 10rem;
+
+}
+
+
+
+
+
+
+
+
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 545px) {
+  .v2-content {
   }
 
+  .v2-content .content2 {
+    display: flex;
+  }
 
+  .features {
+    margin: 2% 7%;
+  }
+
+  .link_img .left, .center, .right {
+    display: none;
+  }
+
+  .content1 .header {
+    font-size: 1rem;
+    margin: 1%;
+  }
+  /* .content1-numbers {
+    display: flex;
+  } */
 }
