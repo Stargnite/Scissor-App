@@ -48,12 +48,13 @@ $light-grayish-blue: hsl(240, 5%, 91%);
     padding-top: 18px;
     padding-bottom: 18px;
     font-family: sans-serif;
+    color: black;
 
-    &::after {
-      content: url(../../assets/icon-arrow-down.svg);
-      margin-right: 17px;
-      transform: rotate(90deg);
-    }
+    // &::after {
+    //   content: url(../../assets/icon-arrow-down.svg);
+    //   margin-right: 17px;
+    //   transform: rotate(90deg);
+    // }
 
     &:hover {
       color: #5c5c5c;
