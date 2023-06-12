@@ -32,11 +32,11 @@
   padding-bottom: 18px;
   font-family: sans-serif;
 }
-.faq__question-button::after {
+/* .faq__question-button::after {
   content: url(../../assets/icon-arrow-down.svg);
   margin-right: 17px;
   transform: rotate(90deg);
-}
+} */
 .faq__question-button:hover {
   color: #5c5c5c;
 }
