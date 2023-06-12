@@ -1,4 +1,5 @@
-import "./faq.scss";
+// import "./faq.scss";
+import "./faq.css"
 import AccordionItem from "./AccordionItem";
 import { useState } from "react";
 

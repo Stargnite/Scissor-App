@@ -74,7 +74,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 15px 0;
-  font-family: Consolas;
+  font-family: 'Consolas';
   white-space: nowrap;
 }
 
@@ -208,6 +208,10 @@ nav a {
   box-shadow: 1px 1px 10px;
 }
 
+.link_img {
+  width: 100px;
+}
+
 .link_img .left {
   border: 2px solid #141414;
   position: absolute;
@@ -225,12 +229,13 @@ nav a {
 
 .link_img .center {
   position: absolute;
-  left: 9.5%;
-  right: 4.17%;
+  left: 9%;
+  /* right: 4.17%; */
   border-bottom: transparent;
-  border: 2px solid #141414;
+  border: 1px solid #141414;
   width: 25px;
   height: 0;
+  top: 78px;
 }
 
 .link_img .right {
@@ -255,7 +260,7 @@ nav a {
 }
 
 .link_text {
-  width: auto;
+  width: 12rem;
 }
 
 .get_started {
@@ -332,6 +337,8 @@ nav a {
 
 
 
+
+
 /* RESPONSIVE STYLING */
 @media (max-width: 770px) {
   /* NAVBAR STYLING START */
@@ -345,6 +352,11 @@ nav a {
   .access_btns_small {
     display: block;
   }
+  .access_btns_small .try_for_free {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
   .toggle_btn {
     display: block;
     cursor: pointer;
@@ -353,7 +365,6 @@ nav a {
     right: 5%;
     z-index: 999;
     transition: 1s ease-in-out;
-
   }
   .sidebarOpen .nav_links {
     background-color: #fff;
@@ -402,16 +413,25 @@ nav a {
     .link_ad {
       width: auto;
       top: 550px;
+      left: 3%;
     }
     .link_img .center {
-      top: 49%;
+      top: 50%;
       left: 9.4%;
     }
     .link_text {
       text-align: center;
       width: 12rem;
     }
+
+    .get_started h1 {
+      font-size: 1.5rem;
+    }
 }
+
+
+
+
 
 
 
@@ -424,7 +444,7 @@ nav a {
 @media (max-width: 400px) {
   .LP_content .home_text h1 {
     margin-top: 15%;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .home_vp_links .sign_up {
@@ -437,12 +457,24 @@ nav a {
     width: 70vw;
     padding: 1rem;
     margin-left: 3rem;
-  }
-
-  
+    top: 700px;
+  } 
   .bg_vector2, .link_img .left, .center, .right {
     display: none;
   }
+  .link_text {
+    width: auto;
 
+  }
+  .link_text p {
+    text-align: center;
+  }
 
+  .get_started h1 {
+    font-size: 1.3rem;
+  }
+
+  .year_created {
+    text-align: center;
+  }
 }

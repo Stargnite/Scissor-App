@@ -23,6 +23,9 @@
   grid-template-columns: 350px 350px;
   grid-gap: 2rem;
 }
+.features {
+  max-width: 10rem;
+}
 
 .v2-content h1 {
   font-family: "Gilroy", monospace;
@@ -47,6 +50,11 @@
 
 
  
+
+
+
+
+
 
 
 
@@ -82,10 +90,6 @@
     flex-wrap: wrap;
   }
 
-  .features {
-    width: 10rem;
-  }
-
 }
 
 
@@ -98,15 +102,12 @@
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 545px) {
-  .v2-content {
-  }
-
   .v2-content .content2 {
     display: flex;
   }
 
   .features {
-    margin: 2% 7%;
+    margin: 0 7%;
   }
 
   .link_img .left, .center, .right {
@@ -115,9 +116,39 @@
 
   .content1 .header {
     font-size: 1rem;
-    margin: 1%;
+    margin: 10px;
+    align-self: center;
   }
-  /* .content1-numbers {
-    display: flex;
-  } */
+  .content1-numbers {
+    max-width: 100vw;
+  }
+  .analytics, .analytics p {
+    align-self: center;
+    width: 5rem;
+    margin: 0;
+    padding: 0;
+  }
+  .analytics h1 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin: 5px;
+  }
+
+  .content2 {
+    padding: 0;
+    margin: 0;
+  }
+
+  .features {
+    width: auto;
+    border-bottom: 1px solid gray;
+    padding-bottom: 3%;
+  }
+
+  .features h1 {
+    line-height: auto;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
 }

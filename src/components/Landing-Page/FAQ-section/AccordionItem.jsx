@@ -1,5 +1,7 @@
 import React from "react";
-import "./faq.scss";
+// import "./faq.scss";
+import "./faq.css"
+
 
 const AccordionItem = ({
   showDescription,
