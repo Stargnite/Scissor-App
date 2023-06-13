@@ -1,9 +1,8 @@
 .signup_content {
-position: absolute;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  /* max-width: 40vw; */
   color: #5c6f7f;
   font-family: sans-serif;
 }
@@ -114,20 +113,23 @@ position: absolute;
 
 
 
+
+
+
+
 @media (max-width: 400px) {
-  .pass_desc {
-    font-size: 7;
+  .input_fields {
+    width: 20rem;
   }
   .signup_btn {
     width: 70%;
   }
 
   .to_login {
-    font-size: 15px
+    font-size: 15px;
   }
   .terms_condition {
-    font-size: .7rem;
+    font-size: 0.7rem;
     width: auto;
   }
 }
-
