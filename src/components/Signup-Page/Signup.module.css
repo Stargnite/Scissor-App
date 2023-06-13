@@ -26,9 +26,6 @@ position: absolute;
   height: 1rem;
 }
 
-.auto_signup {
-}
-
 .auto_signup h5 {
   text-align: center;
   margin-bottom: 5%;
@@ -124,15 +121,13 @@ position: absolute;
   .signup_btn {
     width: 70%;
   }
-  .input_fields  {
-
-  }
 
   .to_login {
     font-size: 15px
   }
   .terms_condition {
     font-size: .7rem;
+    width: auto;
   }
 }
 
