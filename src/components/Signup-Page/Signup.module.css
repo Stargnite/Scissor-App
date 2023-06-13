@@ -1,8 +1,9 @@
 .signup_content {
-  position: absolute;
+position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  /* max-width: 40vw; */
   color: #5c6f7f;
   font-family: sans-serif;
 }
@@ -23,6 +24,9 @@
   transform: translate(-50%. -50%);
   width: 1rem;
   height: 1rem;
+}
+
+.auto_signup {
 }
 
 .auto_signup h5 {
@@ -53,7 +57,6 @@
 .input_fields {
   display: flex;
   flex-direction: column;
-  width: 25rem;
 }
 
 .input_fields input {
@@ -66,6 +69,7 @@
 
 .password_cont {
   display: flex;
+  width: 100%;
 }
 
 .pass_toggle {
@@ -77,13 +81,13 @@
 
 .pass_desc {
   font-size: 12px;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   margin-top: -3%;
   margin-bottom: 5%;
 }
 
 .signup_btn {
-  width: 80%;
+  width: 70%;
   background: #005ae2;
   color: white;
   font-weight: normal;
@@ -102,5 +106,33 @@
 .signup-content a {
   text-decoration: none;
   color: #005ae2;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 400px) {
+  .pass_desc {
+    font-size: 7;
+  }
+  .signup_btn {
+    width: 70%;
+  }
+  .input_fields  {
+
+  }
+
+  .to_login {
+    font-size: 15px
+  }
+  .terms_condition {
+    font-size: .7rem;
+  }
 }
 

@@ -27,9 +27,7 @@ const Signup = () => {
     try {
       const userCredential = await signInWithPopup(auth, provider);
       const user = userCredential.user;
-      const expirationTime = new Date(
-        new Date().getTime() + 86400000 * 1000
-      );
+      const expirationTime = new Date(new Date().getTime() + 86400000 * 1000);
       authCtx.login(user.email, expirationTime.toISOString(), user);
       navigate("/dashboard");
       setIsLoading(false);
@@ -66,12 +64,10 @@ const Signup = () => {
         );
         let user = userCredential.user;
         user.displayName = enteredUsername;
-        const expirationTime = new Date(
-          new Date().getTime() + 86400000 * 1000
-        );
+        const expirationTime = new Date(new Date().getTime() + 86400000 * 1000);
         authCtx.login(user.email, expirationTime.toISOString(), user);
         navigate("/dashboard");
-        
+
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
