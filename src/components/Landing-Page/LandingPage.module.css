@@ -414,6 +414,7 @@ nav a {
       width: auto;
       top: 550px;
       left: 3%;
+      padding: 2rem;
     }
     .link_img .center {
       top: 50%;
@@ -428,6 +429,55 @@ nav a {
       font-size: 1.5rem;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1070px) {
+  .nav_links {
+    font-size: .1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 480) {
+  .link_ad {
+    padding: 2rem 20px;
+    left: 3px;
+  }
+}
+@media (max-width: 440) {
+  .link_ad {
+    padding: 3px;
+  }
+}
+
+
+
 
 
 
@@ -478,3 +528,4 @@ nav a {
     text-align: center;
   }
 }
+
