@@ -8,9 +8,11 @@ import AuthContext from "../../store/auth-context";
 import NotFound from "../pageNotFound/NotFound";
 import Login from "../LogIn-Page/Login";
 import Signup from "../Signup-Page/Signup";
+import UseAuth from "../Authentication/UseAuth";
 
 export default function NavRoutes() {
   const authCtx = useContext(AuthContext);
+  const user = UseAuth();
 
   return (
     <Routes>
@@ -22,7 +24,7 @@ export default function NavRoutes() {
         path="/dashboard"
         element={
           <React.Suspense fallback="Loading...">
-            {authCtx.isLoggedIn && <LazyDashboard />}
+            {authCtx.isLoggedIn && <LazyDashboard user={user} />}
             {!authCtx.isLoggedIn && <Navigate to='/login' />}
           </React.Suspense>
         }

@@ -7,6 +7,7 @@ import FAQ from "./FAQ-section/FAQ";
 import Footer from "./footer/Footer";
 import { useContext, useState } from "react";
 import AuthContext from "../../store/auth-context";
+import Pricing from "./Pricing/Pricing";
 
 export default function LandingPage() {
   const authCtx = useContext(AuthContext);
@@ -142,6 +143,7 @@ export default function LandingPage() {
         </div>
       </div>
       <ViewPort2 />
+      <Pricing />
       <div className={classes.get_started}>
         <h1>Revolutionizing Link Optimization</h1>
         <button onClick={handleGetStarted}>Get Started</button>

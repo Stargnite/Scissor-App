@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import classes from "./Signup.module.css";
 import { useEffect, useState, useContext, useRef } from "react";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import {setDoc, doc } from 'firebase/firestore'
 import { auth, provider, db } from "../Authentication/Firebase/firebase";
 import { FaGoogle, FaApple, FaRegEye } from "react-icons/fa";
 import AuthContext from "./../../store/auth-context";
@@ -63,7 +64,9 @@ const Signup = () => {
           enteredPassword
         );
         let user = userCredential.user;
-        user.displayName = enteredUsername;
+        localStorage.setItem('enteredUsername', enteredUsername)
+        user.displayName = localStorage.getItem('enteredUsername');
+        console.log(user.displayName)
         const expirationTime = new Date(new Date().getTime() + 86400000 * 1000);
         authCtx.login(user.email, expirationTime.toISOString(), user);
         navigate("/dashboard");

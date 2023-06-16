@@ -57,7 +57,6 @@ export default function Login() {
           enteredPassword
         );
         let user = userCredential.user;
-        // user.displayName = user.email;
         const expirationTime = new Date(
           new Date().getTime() + 86400000 * 1000
         );

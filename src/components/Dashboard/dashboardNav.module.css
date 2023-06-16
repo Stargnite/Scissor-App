@@ -1,0 +1,45 @@
+.dash_nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 5%;
+}
+
+.dash_nav h1 {
+  font-family: sans-serif;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+ .drop_btn {
+	display: flex;
+	font-size: 1.5rem;
+}
+
+.drop_content {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+}
+.drop_content button {
+	background: none;
+	color: white;
+}
+
+.dash_nav .drop_cont_active {
+  /* display: block;
+  overflow: hidden; */
+
+}
+
+ .dropdown:hover .drop_content {
+  visibility: visible;
+ }

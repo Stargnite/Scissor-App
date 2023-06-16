@@ -15,7 +15,6 @@ const Result = ({ isLoading, shortLink }) => {
 
   if(isLoading) {
     return <img src={LoadingGIF} className="loading_shrt_url" alt="Loading..." />
-	// return <p className="loading">Loading...</p>
   }
 
   return (
