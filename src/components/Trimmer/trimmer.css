@@ -14,6 +14,8 @@
   transform: translate(-50%, -50%);
 }
 
+
+
 .trimmer form {
   display: grid;
   grid-template-columns: 100%;
@@ -25,6 +27,7 @@
   justify-content: space-between;
   gap: 3px;
 }
+
 
 .trimmer form input,
 .customize-dropdown {
@@ -58,31 +61,16 @@
 
 .short-url {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-.short-url p {
+.short-url input {
   font-weight: normal;
-  margin-left: 1rem;
+  margin-right: 1rem;
   margin-top: 0;
   border: 1px solid rgba(0, 90, 226, 0.8);
-  width: 70%;
-  padding: 0.5rem;
+  width: 60%;
   border-radius: 4rem;
   color: gray;
-}
-
-/* RESULT STYLING */
-.copied {
-}
-
-.loading_shrt_url {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1.5rem;
-  height: 1.5rem;
 }

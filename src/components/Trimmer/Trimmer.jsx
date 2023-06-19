@@ -2,13 +2,21 @@ import React, { useEffect } from "react";
 import "./trimmer.css";
 import { useState } from "react";
 import axios from "axios";
-import Result from "./Result";
+import ResultModal from "./ResultModal";
 
 const Trimmer = () => {
   const [shortLink, setShortLink] = useState("");
   const [inputLink, setInputLink] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [alias, setAlias] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   const fetchData = async () => {
     try {
@@ -28,35 +36,44 @@ const Trimmer = () => {
   return (
     <div className="trimmer">
       <section>
-        <form action="">
-          <input
-            type="text"
-            placeholder="Paste URL here..."
-            onChange={(e) => {
-              setInputLink(e.target.value);
-            }}
-          />
-          <div className="customize">
-            <div className="customize-dropdown">Customize domain</div>
+        <div className="trimmer_and_result">
+          <form action="">
             <input
               type="text"
-              placeholder="Type Alias here"
+              placeholder="Paste URL here..."
               onChange={(e) => {
-                setAlias(e.target.value);
+                setInputLink(e.target.value);
               }}
             />
-          </div>
-          <button
-            type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              fetchData();
-            }}
-          >
-            Trim URL
-          </button>
-          <Result isLoading={isLoading} shortLink={shortLink} />
-        </form>
+            <div className="customize">
+              <div className="customize-dropdown">Customize domain</div>
+              <input
+                type="text"
+                placeholder="Type Alias here"
+                onChange={(e) => {
+                  setAlias(e.target.value);
+                }}
+              />
+            </div>
+            <button
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                fetchData();
+                openModal();
+              }}
+            >
+              Trim URL
+            </button>
+            {/* <button onClick={openModal}>Open Modal</button> */}
+          </form>
+          <ResultModal
+            isLoading={isLoading}
+            shortLink={shortLink}
+            isOpen={isOpen}
+            closeModal={closeModal}
+          />
+        </div>
         <p>
           By clicking TrimURL, I agree to the{" "}
           <a href="">Terms of Service, Privacy Policy</a> and Use of Cookies.
