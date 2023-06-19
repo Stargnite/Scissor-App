@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./trimmer.css";
 import './resultModal.css'
 import CopyToClipboard from "react-copy-to-clipboard";
@@ -11,9 +11,20 @@ import {GrClose} from 'react-icons/gr'
 const ResultModal = ({ isLoading, shortLink, isOpen, closeModal }) => {
   const [copied, setCopied] = useState(false);
   const [url, setUrl] = useState(shortLink);
+  const qrRef = useRef();
 
   const downloadQRCode = (e) => {
+
+
     e.preventDefault();
+    let canvas = qrRef.current.querySelector("canvas");
+    let image = canvas.toDataURL("image/png");
+    let anchor = document.createElement("a");
+    anchor.href = image;
+    anchor.download = `qr-code.png`;
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
     setUrl("");
   };
 
@@ -53,7 +64,7 @@ const ResultModal = ({ isLoading, shortLink, isOpen, closeModal }) => {
           className="result_modal"
         >
           <button onClick={closeModal} className="close_modal"><GrClose /></button>
-            <div className="qrcode_pic">{qrcode}</div>
+            <div className="qrcode_pic" ref={qrRef}>{qrcode}</div>
           <div className="short-url">
             <input
               type="text"

@@ -8,6 +8,8 @@ import Footer from "./footer/Footer";
 import { useContext, useState } from "react";
 import AuthContext from "../../store/auth-context";
 import Pricing from "./Pricing/Pricing";
+import {GrClose} from 'react-icons/gr'
+
 
 export default function LandingPage() {
   const authCtx = useContext(AuthContext);
@@ -93,7 +95,7 @@ export default function LandingPage() {
               </Link>
             </div>
             <div className={classes.toggle_btn} onClick={handleToggleSidebar}>
-              <FaBars />
+               {sidebarOpen ? <GrClose /> : <FaBars />}
             </div>
           </div>
         </nav>
