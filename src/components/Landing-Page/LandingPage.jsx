@@ -10,7 +10,6 @@ import AuthContext from "../../store/auth-context";
 import Pricing from "./Pricing/Pricing";
 import {GrClose} from 'react-icons/gr'
 
-
 export default function LandingPage() {
   const authCtx = useContext(AuthContext);
 

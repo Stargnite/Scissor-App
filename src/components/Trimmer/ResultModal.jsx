@@ -6,12 +6,22 @@ import LoadingGIF from "../../assets/loadingGIF.gif";
 import { QRCodeCanvas } from "qrcode.react";
 import ReactModal from "react-modal";
 import {GrClose} from 'react-icons/gr'
+import ReactGA from 'react-ga'
+
 
 
 const ResultModal = ({ isLoading, shortLink, isOpen, closeModal }) => {
   const [copied, setCopied] = useState(false);
   const [url, setUrl] = useState(shortLink);
   const qrRef = useRef();
+
+
+  ReactGA.event({
+    category: shortLink,
+    action: 'click action',
+    label: "click label",
+    value: shortLink,
+  })
 
   const downloadQRCode = (e) => {
 
