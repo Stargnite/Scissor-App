@@ -3,6 +3,7 @@ import "./trimmer.css";
 import { useState } from "react";
 import axios from "axios";
 import ResultModal from "./ResultModal";
+import { MdKeyboardArrowDown } from 'react-icons/md'
 
 const Trimmer = () => {
   const [shortLink, setShortLink] = useState("");
@@ -46,7 +47,7 @@ const Trimmer = () => {
               }}
             />
             <div className="customize">
-              <div className="customize-dropdown">Customize domain</div>
+              <div className="customize-dropdown">Customize domain <MdKeyboardArrowDown className="down-icon"/> </div>
               <input
                 type="text"
                 placeholder="Type Alias here"

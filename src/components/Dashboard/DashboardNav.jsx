@@ -46,11 +46,11 @@ const DashboardNav = ({user}) => {
               <div className="user_img">
                 <img src="" />
               </div>
-            <div className={classes.drop_content}>
+            {/* <div className={classes.drop_content}>
               <button className={classes.button} onClick={handleLogout}>
                 logout
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

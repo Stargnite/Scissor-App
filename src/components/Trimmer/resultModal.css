@@ -60,7 +60,8 @@
   justify-content: center;
   width: 100%;
 }
-.copied, .download_qr button {
+.copied,
+.download_qr button {
   background-color: blue;
   color: white;
 }
