@@ -7,9 +7,10 @@ const UseAuth = () => {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribed = onAuthStateChanged(auth, (user) => {
+    const unsubscribed = onAuthStateChanged(auth, async (user) => {
       if (user) {
         setCurrentUser(user);
+        localStorage.setItem('currentUsername', user.displayName)
         const ref = doc(db, "users", user.uid)
         const randomUser = {name: user.displayName, value: "your-link"}
          setDoc(ref, randomUser);

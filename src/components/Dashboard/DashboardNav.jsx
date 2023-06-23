@@ -20,7 +20,7 @@ const DashboardNav = ({user}) => {
   const navigate = useNavigate();
 
 
-  // const currentUser = UseAuth();
+  const currentUser = localStorage.getItem('currentUsername');
   // console.log(currentUser.name);
 
   const handleLogout = async () => {
@@ -41,16 +41,16 @@ const DashboardNav = ({user}) => {
           <h1 className={classes.logo}>SCISSOR</h1>
           <div className={classes.dropdown}>
             <p className={classes.drop_btn}>
-              {/* {user.displayName}  */} name
+              {/* {user.displayName}   */} username
             </p>
               <div className="user_img">
                 <img src="" />
               </div>
-            {/* <div className={classes.drop_content}>
+            <div className={classes.drop_content}>
               <button className={classes.button} onClick={handleLogout}>
                 logout
               </button>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
